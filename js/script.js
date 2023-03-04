@@ -41,12 +41,20 @@ var server_data = {
 
 // TODO: Componente edit-form
 Vue.component('edit-form', {
-
+    
 })
 
 // TODO: Componente item-data
 Vue.component('item-data', {
-
+    tenplate: '#itemData',
+    props: {
+        element: Object
+      },
+      methods: {
+        toggleEditFormVisibility(itemdata) {
+          itemdata.visible = false;
+        }
+      }
 })
 
 // Aplicación VueJS
@@ -57,4 +65,11 @@ var app = new Vue({
         col: server_data
     }
 });
+
+var app2= new Vue({
+    el: '#autor',
+    data: {
+      nombre:'Mohamed tajni'
+    }
+  });
 
